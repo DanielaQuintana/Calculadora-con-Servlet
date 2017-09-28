@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina principal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <style>
+            body
+            {
+                font-family: 'Sofia';font-size: 22px;
+            }
+           
+        </style>
+        <script>
+            <!-- Función para validar que se llenen los campos correspondientes-->
+            function validar(formulario){
+                var numero1 = formulario.numero1.value;
+                var numero2 = formulario.numero2.value;
+                if(isNaN(numero1) || isNaN(numero2) || numero1 == "" || numero2 == ""){
+                    alert("Introduce los numeros.");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <br><br>
+        <!--Llmar al Servlet-->
+        <center><form name="formulario" id="calculadora" action="calc" method="get" onsubmit="return validar(this);">
+            <h1>Calculadora con Servlets</h1>
+            <input style="font-family: Sofia" type="text" name="numero1" placeholder="Introduce un número" />
+            <input style="font-family: Sofia" type="text" name="numero2" placeholder="Introduce otro número" /><br/><br/>
+            <input style="font-family: Sofia" type="submit" name="suma" value="Sumar" />
+            <input style="font-family: Sofia" type="submit" name="resta" value="Restar" />
+            <input style="font-family: Sofia" type="submit" name="division" value="Dividir" />
+            <input style="font-family: Sofia" type="submit" name="multiplicacion" value="Multiplicar" />
+        </form></center>
+    </body>
+</html>
